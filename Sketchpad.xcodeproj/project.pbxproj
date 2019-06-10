@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E228C7DA77D2A0BE9CC8522 /* Pods_Sketchpad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB283142E422706CD0CE04F9 /* Pods_Sketchpad.framework */; };
 		A71A923622ADC8B3005F2EBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A923522ADC8B3005F2EBB /* AppDelegate.swift */; };
-		A71A923822ADC8B3005F2EBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A923722ADC8B3005F2EBB /* ViewController.swift */; };
 		A71A923B22ADC8B3005F2EBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A923922ADC8B3005F2EBB /* Main.storyboard */; };
 		A71A923E22ADC8B3005F2EBB /* Sketchpad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A71A923C22ADC8B3005F2EBB /* Sketchpad.xcdatamodeld */; };
 		A71A924022ADC8B9005F2EBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71A923F22ADC8B9005F2EBB /* Assets.xcassets */; };
 		A71A924322ADC8B9005F2EBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A924122ADC8B9005F2EBB /* LaunchScreen.storyboard */; };
+		A71A924B22ADCEA0005F2EBB /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A924A22ADCEA0005F2EBB /* DrawingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AD60A1BE7E9C49B4EE547CD /* Pods-Sketchpad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sketchpad.release.xcconfig"; path = "Target Support Files/Pods-Sketchpad/Pods-Sketchpad.release.xcconfig"; sourceTree = "<group>"; };
+		4997FF815215FF134DE04C4F /* Pods-Sketchpad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sketchpad.debug.xcconfig"; path = "Target Support Files/Pods-Sketchpad/Pods-Sketchpad.debug.xcconfig"; sourceTree = "<group>"; };
 		A71A923222ADC8B2005F2EBB /* Sketchpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sketchpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71A923522ADC8B3005F2EBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A71A923722ADC8B3005F2EBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A71A923A22ADC8B3005F2EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71A923D22ADC8B3005F2EBB /* Sketchpad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sketchpad.xcdatamodel; sourceTree = "<group>"; };
 		A71A923F22ADC8B9005F2EBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71A924222ADC8B9005F2EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A71A924422ADC8B9005F2EBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71A924A22ADCEA0005F2EBB /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		AB283142E422706CD0CE04F9 /* Pods_Sketchpad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sketchpad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E228C7DA77D2A0BE9CC8522 /* Pods_Sketchpad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		832575A2D78037C4182FF377 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB283142E422706CD0CE04F9 /* Pods_Sketchpad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A71A922922ADC8B2005F2EBB = {
 			isa = PBXGroup;
 			children = (
 				A71A923422ADC8B3005F2EBB /* Sketchpad */,
 				A71A923322ADC8B2005F2EBB /* Products */,
+				D1E77435930BB879582F1C4D /* Pods */,
+				832575A2D78037C4182FF377 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +72,24 @@
 			isa = PBXGroup;
 			children = (
 				A71A923522ADC8B3005F2EBB /* AppDelegate.swift */,
-				A71A923722ADC8B3005F2EBB /* ViewController.swift */,
 				A71A923922ADC8B3005F2EBB /* Main.storyboard */,
+				A71A924A22ADCEA0005F2EBB /* DrawingViewController.swift */,
 				A71A923F22ADC8B9005F2EBB /* Assets.xcassets */,
 				A71A924122ADC8B9005F2EBB /* LaunchScreen.storyboard */,
 				A71A924422ADC8B9005F2EBB /* Info.plist */,
 				A71A923C22ADC8B3005F2EBB /* Sketchpad.xcdatamodeld */,
 			);
 			path = Sketchpad;
+			sourceTree = "<group>";
+		};
+		D1E77435930BB879582F1C4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4997FF815215FF134DE04C4F /* Pods-Sketchpad.debug.xcconfig */,
+				3AD60A1BE7E9C49B4EE547CD /* Pods-Sketchpad.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A71A924722ADC8B9005F2EBB /* Build configuration list for PBXNativeTarget "Sketchpad" */;
 			buildPhases = (
+				8051F0AB81AFA4D80F80EC71 /* [CP] Check Pods Manifest.lock */,
 				A71A922E22ADC8B2005F2EBB /* Sources */,
 				A71A922F22ADC8B2005F2EBB /* Frameworks */,
 				A71A923022ADC8B2005F2EBB /* Resources */,
+				AEE9DD2A4F399524E58D2C1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +160,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8051F0AB81AFA4D80F80EC71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sketchpad-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEE9DD2A4F399524E58D2C1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sketchpad/Pods-Sketchpad-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sketchpad/Pods-Sketchpad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A71A922E22ADC8B2005F2EBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A71A923E22ADC8B3005F2EBB /* Sketchpad.xcdatamodeld in Sources */,
-				A71A923822ADC8B3005F2EBB /* ViewController.swift in Sources */,
+				A71A924B22ADCEA0005F2EBB /* DrawingViewController.swift in Sources */,
 				A71A923622ADC8B3005F2EBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +358,7 @@
 		};
 		A71A924822ADC8B9005F2EBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4997FF815215FF134DE04C4F /* Pods-Sketchpad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +377,7 @@
 		};
 		A71A924922ADC8B9005F2EBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD60A1BE7E9C49B4EE547CD /* Pods-Sketchpad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
