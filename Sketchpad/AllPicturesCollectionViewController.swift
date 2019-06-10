@@ -46,6 +46,10 @@ class AllPicturesCollectionViewController: UICollectionViewController {
         return pictures.count
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let picture = pictures[indexPath.row]
+        performSegue(withIdentifier: "viewDetail", sender: picture)
+    }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pictureCell", for: indexPath) as? PictureCell{
             
@@ -62,6 +66,14 @@ class AllPicturesCollectionViewController: UICollectionViewController {
         // Configure the cell
     
        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? DetailViewController{
+            if let picture = sender as? Picture{
+                detailVC.picture = picture
+            }
+        }
     }
 
   

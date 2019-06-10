@@ -15,6 +15,7 @@
 		A71A924322ADC8B9005F2EBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71A924122ADC8B9005F2EBB /* LaunchScreen.storyboard */; };
 		A71A924B22ADCEA0005F2EBB /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A924A22ADCEA0005F2EBB /* DrawingViewController.swift */; };
 		A71A924D22AF1999005F2EBB /* AllPicturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A924C22AF1999005F2EBB /* AllPicturesCollectionViewController.swift */; };
+		A71A924F22AF2068005F2EBB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A924E22AF2068005F2EBB /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A71A924422ADC8B9005F2EBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A71A924A22ADCEA0005F2EBB /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		A71A924C22AF1999005F2EBB /* AllPicturesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPicturesCollectionViewController.swift; sourceTree = "<group>"; };
+		A71A924E22AF2068005F2EBB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AB283142E422706CD0CE04F9 /* Pods_Sketchpad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sketchpad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				A71A923522ADC8B3005F2EBB /* AppDelegate.swift */,
 				A71A923922ADC8B3005F2EBB /* Main.storyboard */,
 				A71A924C22AF1999005F2EBB /* AllPicturesCollectionViewController.swift */,
+				A71A924E22AF2068005F2EBB /* DetailViewController.swift */,
 				A71A924A22ADCEA0005F2EBB /* DrawingViewController.swift */,
 				A71A923F22ADC8B9005F2EBB /* Assets.xcassets */,
 				A71A924122ADC8B9005F2EBB /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 			files = (
 				A71A923E22ADC8B3005F2EBB /* Sketchpad.xcdatamodeld in Sources */,
 				A71A924B22ADCEA0005F2EBB /* DrawingViewController.swift in Sources */,
+				A71A924F22AF2068005F2EBB /* DetailViewController.swift in Sources */,
 				A71A923622ADC8B3005F2EBB /* AppDelegate.swift in Sources */,
 				A71A924D22AF1999005F2EBB /* AllPicturesCollectionViewController.swift in Sources */,
 			);
