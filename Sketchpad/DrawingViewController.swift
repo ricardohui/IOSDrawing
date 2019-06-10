@@ -18,6 +18,11 @@ class DrawingViewController: UIViewController, ChromaColorPickerDelegate {
     var brushSize : Float = 30.0
     var colorPicker : ChromaColorPicker?
     var greyedOut = UIView()
+    
+    @IBOutlet var stackView: UIStackView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         greyedOut = UIView(frame: view.frame)
@@ -36,6 +41,43 @@ class DrawingViewController: UIViewController, ChromaColorPickerDelegate {
          colorPicker?.isHidden = true
     }
     
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func saveTapped(_ sender: Any) {
+        let ac = UIAlertController(title: "Name your picture", message: nil, preferredStyle: .alert)
+        ac.addTextField { (textField) in textField.placeholder = "My Masterpiece"}
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+            if let name = ac.textFields?.first?.text{
+                if name != ""{
+                    if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+                        let picture = Picture(context: context)
+                        picture.name = name
+                        if let image = self.imageView.image{
+                            picture.image = image.jpegData(compressionQuality: 1)
+                            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                        }
+                    }
+                  self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+            
+        }
+        
+        ac.addAction(cancelAction)
+        ac.addAction(saveAction)
+        present(ac, animated: true, completion: nil)
+        
+        
+    }
+    
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
         print("Color chosen!")
         currentColor = color.cgColor
@@ -43,6 +85,7 @@ class DrawingViewController: UIViewController, ChromaColorPickerDelegate {
          greyedOut.isHidden = true
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        stackView.isHidden = true
         if let beginPoint = touches.first?.location(in: imageView){
             lastPoint  = beginPoint
         }
@@ -56,6 +99,7 @@ class DrawingViewController: UIViewController, ChromaColorPickerDelegate {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        stackView.isHidden = false
         if let endPoint = touches.first?.location(in: imageView){
             drawBetweenTwoPoints(point1: lastPoint, point2: endPoint)
            

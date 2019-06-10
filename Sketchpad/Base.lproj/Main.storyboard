@@ -10,28 +10,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--All Pictures Collection View Controller-->
         <scene sceneID="1DG-s7-UCP">
             <objects>
-                <collectionViewController id="KS8-Yr-RV5" sceneMemberID="viewController">
+                <collectionViewController id="KS8-Yr-RV5" customClass="AllPicturesCollectionViewController" customModule="Sketchpad" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="o3c-5C-Rm1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oV5-tz-6JY">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="100" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ib7-0e-X4O">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pictureCell" id="Ib7-0e-X4O" customClass="PictureCell" customModule="Sketchpad" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSt-jE-50h">
+                                            <rect key="frame" x="0.0" y="100" width="100" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="ar8-WZ-QUx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eN2-eh-vXg">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="eN2-eh-vXg" firstAttribute="leading" secondItem="Ib7-0e-X4O" secondAttribute="leading" id="Agr-fZ-TLN"/>
+                                    <constraint firstItem="YSt-jE-50h" firstAttribute="top" secondItem="eN2-eh-vXg" secondAttribute="bottom" id="Qed-H3-0iZ"/>
+                                    <constraint firstItem="eN2-eh-vXg" firstAttribute="top" secondItem="Ib7-0e-X4O" secondAttribute="top" id="RMI-kP-6d4"/>
+                                    <constraint firstItem="YSt-jE-50h" firstAttribute="leading" secondItem="Ib7-0e-X4O" secondAttribute="leading" id="r7h-iz-Ute"/>
+                                    <constraint firstAttribute="bottom" secondItem="YSt-jE-50h" secondAttribute="bottom" id="s1e-kx-Xbp"/>
+                                    <constraint firstAttribute="trailing" secondItem="YSt-jE-50h" secondAttribute="trailing" id="u11-wm-5EW"/>
+                                    <constraint firstAttribute="trailing" secondItem="eN2-eh-vXg" secondAttribute="trailing" id="wEu-hm-2bv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="eN2-eh-vXg" id="8Qk-iJ-5om"/>
+                                    <outlet property="nameLabel" destination="YSt-jE-50h" id="jCb-in-qSU"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -83,7 +110,18 @@
                                     <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="Bt6-iF-MW7"/>
+                                    <navigationItem title="New Picture" id="Bt6-iF-MW7">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="sNu-pz-wdc">
+                                            <connections>
+                                                <action selector="saveTapped:" destination="QfV-SS-b0g" id="N4k-AB-8qZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="5Ib-dH-SJ6">
+                                            <connections>
+                                                <action selector="deleteTapped:" destination="QfV-SS-b0g" id="Kcm-1Z-gFv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFn-vc-31F">
@@ -153,6 +191,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="DHh-pU-PHv" id="LZO-ZH-c8f"/>
+                        <outlet property="stackView" destination="8uV-Bn-eUO" id="IeJ-Fv-3y2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERs-4n-j0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
